@@ -30,6 +30,16 @@ function sortWords(words) {
   })
 }
 
+function makeAllCaps(array) {
+  return new Promise((resolve, reject) => {
+    if (array) {
+      resolve(sortWords(array))
+    } else {
+      reject('only strings in this town')
+    }
+  })
+}
+
 makeAllCaps(['wowow', 'pants', 'bird'])
   .then(words => sortWords(words))
   .then(result => console.log(result))
